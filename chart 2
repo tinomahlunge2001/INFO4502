@@ -1,0 +1,20 @@
+# chart 2 
+import pandas as pd
+import plotly.express as px
+
+
+data = pd.read_csv('workout_data.csv')
+
+# Create a sunburst chart
+fig = px.sunburst(data, path=['Exercise Type', 'Targeted Body Part'],
+                  values='Duration (min)', color='Duration (min)'
+                  values='Pulse (min)', color='Pulse (min)'
+                  values='Maxpulse(min)', color='Maxpulse (min)'
+                  values='Calories(min)',color='Calories(min)')
+
+# Customize the layout
+fig.update_layout(title='Workout Data',
+                  height=500)
+
+# Display the chart
+fig.show()
