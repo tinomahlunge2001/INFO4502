@@ -1,0 +1,9 @@
+#chart 3 
+import plotly.express as px
+import pandas as pd
+
+df = pd.read_csv("workout_data.csv")
+
+fig = px.parallel_coordinates(df, color="workout_type",
+                              dimensions=["Duration", "Pulse", "Maxpulse","Calories",])
+fig.show()
